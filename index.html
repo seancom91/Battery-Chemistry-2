@@ -91,7 +91,7 @@ header.intro { height: 230vh; height: 230svh; position: relative; z-index: 2; }
 .fig-controls { position: absolute; right: 0; top: 14px; z-index: 3; }
 .fig-controls button { font-size: .72rem; padding: 3px 9px; opacity: .85; display: inline-flex; align-items: center; gap: 6px; }
 .fig-controls button svg { width: 9px; height: 10px; fill: currentColor; }
-.steps { position: relative; z-index: 1; margin-top: -100vh; margin-top: -100svh; padding: 150svh 0 50svh; pointer-events: none; }
+.steps { position: relative; z-index: 1; margin-top: -100vh; margin-top: -100svh; padding: 150svh 0 95svh; pointer-events: none; }
 button, select {
   font: inherit; font-size: .95rem; color: var(--ink);
   background: var(--card); border: 1px solid var(--line); border-radius: 8px;
@@ -116,7 +116,7 @@ button:hover, select:hover { border-color: var(--muted); }
 .step p { margin: 0 0 8px; }
 .step p:last-child { margin-bottom: 0; }
 .step:last-child { flex-direction: column; justify-content: center; align-items: flex-start; gap: 18px; }
-.end-doodle { position: fixed; left: 50%; bottom: 16svh; transform: translateX(-50%); height: 180px; width: auto; z-index: 5; pointer-events: none; }
+.end-doodle { position: fixed; left: 50%; bottom: 16svh; transform: translateX(-50%); height: 216px; width: auto; z-index: 5; pointer-events: none; }
 .eq {
   font-variant-numeric: tabular-nums; background: var(--bg); border-radius: 8px;
   padding: 8px 12px; margin: 10px 0; font-weight: 700; overflow-x: auto; white-space: nowrap;
@@ -144,11 +144,11 @@ svg text { font-family: var(--font-body); fill: var(--ink); }
 .electrode { filter: url(#drop); stroke: transparent; stroke-width: 4; transition: stroke .4s; }
 .electrode.hl { stroke: var(--electron); }
 .el-label { font-weight: 700; font-size: 20px; fill: #fff; }
-.sol-label { font-size: 15px; fill: var(--muted); }
+.sol-label { font-size: 17px; fill: var(--muted); }
 .wire { fill: none; stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; }
 .meter-face { fill: var(--card); stroke: var(--ink); stroke-width: 3; }
 .meter-digits { font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums; }
-.small { font-size: 13px; fill: var(--muted); }
+.small { font-size: 16px; fill: var(--muted); }
 .tube { fill: none; stroke: var(--line); stroke-width: 24; stroke-linejoin: round; }
 .tube-edge { fill: none; stroke: var(--muted); stroke-width: 28; stroke-linejoin: round; }
 .electron { fill: url(#sE); }
@@ -157,12 +157,12 @@ svg text { font-family: var(--font-body); fill: var(--ink); }
 .ion-dot-zn { fill: url(#sZn); }
 .ion-dot-cu { fill: url(#sCuIon); }
 .callout rect { fill: var(--card); stroke: var(--line); stroke-width: 1.5; }
-.callout text { font-size: 15px; font-weight: 700; }
+.callout text { font-size: 17px; font-weight: 700; }
 .badge circle { stroke-width: 3; fill: var(--card); }
 .badge.pos circle { stroke: var(--copper); }
 .badge.neg circle { stroke: var(--solution); }
 .badge text { font-size: 24px; font-weight: 700; }
-.term { font-size: 14px; font-weight: 700; fill: var(--muted); }
+.term { font-size: 16px; font-weight: 700; fill: var(--muted); }
 .chev { fill: none; stroke: var(--electron); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; transform-box: fill-box; transform-origin: center; transition: transform .4s; }
 .chev.rev { transform: rotate(180deg); }
 .eqbox rect { fill: var(--card); stroke: var(--electron); stroke-width: 2; }
@@ -246,7 +246,7 @@ footer { color: var(--muted); font-size: .9rem; }
   .step { align-items: flex-end; justify-content: center; padding-bottom: 3svh; }
   .step .card { width: min(36rem, 100%); }
   .step:last-child { align-items: center; justify-content: flex-end; }
-  .end-doodle { height: 132px; }
+  .end-doodle { height: 158px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .heat { animation: none; opacity: .6; }
@@ -388,8 +388,8 @@ footer { color: var(--muted); font-size: .9rem; }
       <!-- Scene 0: atom-level view of electronegativity and electron transfer -->
       <g id="sceneAtoms" class="fade off">
         <text x="320" y="44" text-anchor="middle" font-size="32" style="font-family:Figtree,var(--font-display);font-weight:900">Zinc and Copper</text>
-        <text id="atomCaption" x="320" y="84" text-anchor="middle" font-size="19" font-weight="700"></text>
-        <text id="atomSub" x="320" y="108" text-anchor="middle" font-size="15" fill="var(--muted)" style="fill:var(--muted)"></text>
+        <text id="atomCaption" x="320" y="86" text-anchor="middle" font-size="23" font-weight="700"></text>
+        <text id="atomSub" x="320" y="114" text-anchor="middle" font-size="18" fill="var(--muted)" style="fill:var(--muted)"></text>
 
         <path id="atomArc" class="arc-guide fade off" d="M250 215 Q320 105 396 206"/>
         <circle class="orbit" cx="180" cy="270" r="90"/>
@@ -419,9 +419,9 @@ footer { color: var(--muted); font-size: .9rem; }
 
         <g id="atomEqs" class="fade off">
           <text x="180" y="490" text-anchor="middle" font-size="17" font-weight="700">Zn → Zn²⁺ + 2e⁻</text>
-          <text x="180" y="514" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--zinc)">OXIDIZED · loses electrons</text>
+          <text x="180" y="514" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--zinc)">OXIDIZED · loses electrons</text>
           <text x="460" y="490" text-anchor="middle" font-size="17" font-weight="700">Cu²⁺ + 2e⁻ → Cu</text>
-          <text x="460" y="514" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--copper)">REDUCED · gains electrons</text>
+          <text x="460" y="514" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--copper)">REDUCED · gains electrons</text>
         </g>
         <text class="small" x="320" y="548" text-anchor="middle">Simplified model: only the outer electrons are shown.</text>
       </g>
@@ -429,7 +429,7 @@ footer { color: var(--muted); font-size: .9rem; }
       <!-- Scene A: zinc strip dropped straight into copper sulfate, with a zoomed-in view of its surface -->
       <g id="sceneDirect" class="fade off">
         <text x="320" y="48" text-anchor="middle" font-size="21" font-weight="700">Why copper coats the zinc</text>
-        <text x="320" y="76" text-anchor="middle" font-size="16" style="fill:var(--muted)">Cu²⁺ pulls harder on electrons than zinc does</text>
+        <text x="320" y="78" text-anchor="middle" font-size="19" style="fill:var(--muted)">Cu²⁺ pulls harder on electrons than zinc does</text>
 
         <!-- the beaker -->
         <g id="heat">
@@ -472,8 +472,8 @@ footer { color: var(--muted); font-size: .9rem; }
           <path pathLength="1" d="M126 474 L144 487 L124 498"/>
           <path pathLength="1" d="M318 466 C 430 462, 512 472, 506 489 C 500 508, 330 512, 200 507 C 128 504, 120 480, 168 471 C 220 462, 300 462, 345 465"/>
         </g>
-        <text class="small" x="320" y="518" text-anchor="middle" style="font-size:14px">Cu²⁺ takes 2 electrons and sticks as copper metal. Zinc dissolves as Zn²⁺.</text>
-        <text class="small" x="320" y="540" text-anchor="middle" style="font-size:14px">Blue Cu²⁺ is used up, so the color fades. The energy escapes as heat.</text>
+        <text class="small" x="320" y="518" text-anchor="middle" style="font-size:16px">Cu²⁺ takes 2 electrons and sticks as copper metal. Zinc dissolves as Zn²⁺.</text>
+        <text class="small" x="320" y="540" text-anchor="middle" style="font-size:16px">Blue Cu²⁺ is used up, so the color fades. The energy escapes as heat.</text>
       </g>
 
       <!-- Scene B: the two-beaker cell -->
@@ -588,12 +588,12 @@ footer { color: var(--muted); font-size: .9rem; }
         <g id="cellKey">
           <rect id="keyBox" x="8" y="8" width="132" height="118" rx="8" fill="var(--card)" fill-opacity=".92" stroke="var(--line)"/>
           <text x="20" y="27" font-size="12" font-weight="700" style="fill:var(--muted)" letter-spacing=".06em">KEY</text>
-          <circle cx="26" cy="44" r="6" class="ion-dot-zn"/><text x="40" y="49" font-size="14">Zn²⁺ ion</text>
-          <circle cx="26" cy="64" r="6" class="ion-dot-cu"/><text x="40" y="69" font-size="14">Cu²⁺ ion</text>
-          <g id="keyE" class="fade off"><circle cx="26" cy="84" r="6" class="electron"/><text x="40" y="89" font-size="14">electron</text></g>
+          <circle cx="26" cy="44" r="6" class="ion-dot-zn"/><text x="40" y="49" font-size="16">Zn²⁺ ion</text>
+          <circle cx="26" cy="64" r="6" class="ion-dot-cu"/><text x="40" y="69" font-size="16">Cu²⁺ ion</text>
+          <g id="keyE" class="fade off"><circle cx="26" cy="84" r="6" class="electron"/><text x="40" y="89" font-size="16">electron</text></g>
           <g id="keyBridge" class="fade off">
-            <circle cx="26" cy="104" r="6" class="kplus"/><text x="40" y="109" font-size="14">K⁺</text>
-            <circle cx="84" cy="104" r="6" class="anion"/><text x="96" y="109" font-size="14">NO₃⁻</text>
+            <circle cx="26" cy="104" r="6" class="kplus"/><text x="40" y="109" font-size="16">K⁺</text>
+            <circle cx="84" cy="104" r="6" class="anion"/><text x="96" y="109" font-size="16">NO₃⁻</text>
           </g>
         </g>
       </g>
@@ -601,10 +601,10 @@ footer { color: var(--muted); font-size: .9rem; }
       <!-- Scene D: the voltage calculation on its own -->
       <g id="sceneCalc" class="fade off">
         <text x="320" y="46" text-anchor="middle" font-size="26" font-weight="700">How Much Voltage?</text>
-        <text x="320" y="74" text-anchor="middle" font-size="15" style="fill:var(--muted)">Standard reduction potentials, E°, in volts</text>
+        <text x="320" y="76" text-anchor="middle" font-size="18" style="fill:var(--muted)">Standard reduction potentials, E°, in volts</text>
         <line x1="120" y1="120" x2="120" y2="440" stroke="var(--muted)" stroke-width="3"/>
-        <g font-size="14" style="fill:var(--muted)" text-anchor="end">
-          <line x1="112" x2="128" y1="120" y2="120" stroke="var(--muted)" stroke-width="2"/><text x="104" y="125" style="fill:var(--muted)">+1.0 V</text>
+        <g font-size="16" style="fill:var(--muted)" text-anchor="end">
+          <line x1="112" x2="128" y1="120" y2="120" stroke="var(--muted)" stroke-width="2"/><text x="104" y="125" font-size="16" style="fill:var(--muted)">+1.0 V</text>
           <line x1="112" x2="128" y1="200" y2="200" stroke="var(--muted)" stroke-width="2"/><text x="104" y="205" style="fill:var(--muted)">+0.5 V</text>
           <line x1="112" x2="128" y1="280" y2="280" stroke="var(--muted)" stroke-width="2"/><text x="104" y="285" style="fill:var(--muted)">0 V</text>
           <line x1="112" x2="128" y1="360" y2="360" stroke="var(--muted)" stroke-width="2"/><text x="104" y="365" style="fill:var(--muted)">−0.5 V</text>
@@ -676,10 +676,7 @@ footer { color: var(--muted); font-size: .9rem; }
           <rect x="300" y="490" width="40" height="8" rx="3" fill="#0b0d0f"/>
           </g>
           </g>
-          <g id="capInside" class="fade">
-            <text x="470" y="236" font-size="17" font-weight="700"><tspan x="470">A phone with</tspan><tspan x="470" dy="21">its back removed</tspan></text>
-            <text class="small" x="470" y="290" style="font-size:13px"><tspan x="470">Electrons leave the −</tspan><tspan x="470" dy="17">terminal, run the chip,</tspan><tspan x="470" dy="17">and return to +</tspan></text>
-          </g>
+          <g id="capInside" class="fade"></g>
           <g id="capFront" class="fade">
             <text x="470" y="250" font-size="17" font-weight="700">Your phone</text>
             <text class="small" x="470" y="274" style="font-size:13px"><tspan x="470">Let's turn it over</tspan><tspan x="470" dy="17">and look inside</tspan></text>
@@ -688,7 +685,7 @@ footer { color: var(--muted); font-size: .9rem; }
 
         <g id="phoneDetail" class="zoom-layer">
           <text id="liCaption" x="320" y="38" text-anchor="middle" font-size="21" font-weight="700"></text>
-          <text id="liSub" x="320" y="64" text-anchor="middle" font-size="15" style="fill:var(--muted)"></text>
+          <text id="liSub" x="320" y="66" text-anchor="middle" font-size="18" style="fill:var(--muted)"></text>
 
           <!-- outside path for electrons -->
           <path id="liWire" class="wire" d="M116 200 V115 H524 V200"/>
@@ -715,7 +712,7 @@ footer { color: var(--muted); font-size: .9rem; }
           <rect x="548" y="96" width="52" height="24" rx="4" fill="none" stroke="var(--ink)" stroke-width="2"/>
           <rect x="600" y="103" width="5" height="10" rx="1.5" style="fill:var(--ink)"/>
           <rect id="liLevel" x="551" y="99" width="46" height="18" rx="2" style="fill:#3fb06b"/>
-          <text id="liPct" x="574" y="140" text-anchor="middle" font-size="14" font-weight="700" style="font-variant-numeric:tabular-nums">100%</text>
+          <text id="liPct" x="574" y="142" text-anchor="middle" font-size="16" font-weight="700" style="font-variant-numeric:tabular-nums">100%</text>
 
           <!-- the cell -->
           <rect x="110" y="200" width="420" height="270" rx="6" fill="var(--card)" stroke="var(--muted)" stroke-width="2"/>
@@ -727,14 +724,14 @@ footer { color: var(--muted); font-size: .9rem; }
           <rect x="110" y="200" width="12" height="270" class="cu"/>
           <rect x="518" y="200" width="12" height="270" class="zn"/>
           <g id="liIons" filter="url(#drop)"></g>
-          <text class="small" x="210" y="490" text-anchor="middle" style="font-size:13px">Anode: graphite layers</text>
-          <text class="small" x="320" y="490" text-anchor="middle" style="font-size:13px">Separator</text>
-          <text class="small" x="430" y="490" text-anchor="middle" style="font-size:13px">Cathode: cobalt oxide</text>
-          <text id="liRxn" x="320" y="522" text-anchor="middle" font-size="14" font-weight="700"></text>
-          <g transform="translate(225 546)">
-            <circle r="6" fill="url(#sLi)"/><text x="12" y="5" font-size="13">Li⁺ ion</text>
-            <circle cx="95" r="6" fill="url(#sE)"/><text x="107" y="5" font-size="13">electron</text>
-            <circle cx="190" r="5" fill="url(#sCo)"/><text x="201" y="5" font-size="13">cobalt oxide</text>
+          <text class="small" x="200" y="490" text-anchor="middle" style="font-size:15px">Anode: graphite layers</text>
+          <text class="small" x="320" y="490" text-anchor="middle" style="font-size:15px">Separator</text>
+          <text class="small" x="440" y="490" text-anchor="middle" style="font-size:15px">Cathode: cobalt oxide</text>
+          <text id="liRxn" x="320" y="522" text-anchor="middle" font-size="16" font-weight="700"></text>
+          <g transform="translate(212 548)">
+            <circle r="6" fill="url(#sLi)"/><text x="12" y="5" font-size="15">Li⁺ ion</text>
+            <circle cx="98" r="6" fill="url(#sE)"/><text x="110" y="5" font-size="15">electron</text>
+            <circle cx="196" r="5" fill="url(#sCo)"/><text x="207" y="5" font-size="15">cobalt oxide</text>
           </g>
         </g>
       </g>
